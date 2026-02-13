@@ -1,0 +1,17 @@
+{
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/:path*" },
+    { "source": "/(.*)", "destination": "/" }
+  ],
+  "functions": {
+    "api/**/*.ts": {
+      "maxDuration": 30
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/cron/check-alerts",
+      "schedule": "*/5 * * * *"
+    }
+  ]
+}
